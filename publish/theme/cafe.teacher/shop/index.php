@@ -10,7 +10,6 @@ define("_INDEX_", TRUE);
 
 include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 ?>
-
 <!-- 메인이미지 시작 { -->
 <?php echo display_banner('메인', 'mainbanner.10.skin.php'); ?>
 <!-- } 메인이미지 끝 -->
