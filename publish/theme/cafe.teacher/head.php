@@ -233,15 +233,22 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 	<div id="container_wr" class="container p-0">
 		<div class="row-5">
 			<div class="col-2">
-				<ul>
-					<li>
-						<?php echo $bo_subject; ?>
-					</li>
-					<li>
-						Menus
-					</li>
-				</ul>
+				<div class="bg-w">
+					<ul>
+						<li>
+							<a href="<?php echo G5_URL; ?>" class="d-block text-center">
+								<img src="<?php echo G5_IMG_URL.'/logo/cafe-teacher-logo.png'; ?>" alt="">
+							</a>
+						</li>
+						<li>
+							<?php echo $bo_subject; ?>
+						</li>
+						<li>
+							Menus
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div class="col-7">
-				<?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
+				<?php /*if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php }*/ ?>
 

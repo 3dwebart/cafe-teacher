@@ -1,125 +1,63 @@
 @charset "utf-8";
-/* BIGIN :: Common */
+/********** BIGIN :: Common **********/
+/* BIGIN :: All commen style { */
 body {
 	background-color: #efefef;
 }
 @media (min-width: 1200px) {
 	.container {
-	    max-width: 1200px;
+		max-width: 1200px;
 	}
 }
-.row-2 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -2px;
-    margin-left: -2px;
+.bg-w {
+	background-color: #fff;
 }
-.row-2 > *[class^="col-"] {
-	padding-left: 2px;
-	padding-right: 2px;
-}
-.row-3 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -3px;
-    margin-left: -3px;
-}
-.row-3 > *[class^="col-"] {
-	padding-left: 3px;
-	padding-right: 3px;
-}
-.row-4 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -4px;
-    margin-left: -4px;
-}
-.row-4 > *[class^="col-"] {
-	padding-left: 4px;
-	padding-right: 4px;
-}
-.row-5 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -5px;
-    margin-left: -5px;
-}
-.row-5 > *[class^="col-"] {
-	padding-left: 5px;
-	padding-right: 5px;
-}
-.row-6 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -6px;
-    margin-left: -6px;
-}
-.row-6 > *[class^="col-"] {
-	padding-left: 6px;
-	padding-right: 6px;
-}
-.row-7 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -7px;
-    margin-left: -7px;
-}
-.row-7 > *[class^="col-"] {
-	padding-left: 7px;
-	padding-right: 7px;
-}
-.row-8 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -8px;
-    margin-left: -8px;
-}
-.row-8 > *[class^="col-"] {
-	padding-left: 8px;
-	padding-right: 8px;
-}
-.row-9 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -6px;
-    margin-left: -6px;
-}
-.row-9 > *[class^="col-"] {
-	padding-left: 9px;
-	padding-right: 9px;
-}
-.row-10 {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -10px;
-    margin-left: -10px;
-}
-.row-10 > *[class^="col-"] {
-	padding-left: 10px;
-	padding-right: 10px;
-}
+/* } END :: All commen style */
+/* BIGIN :: Bootstrap grid row style { */
+.row-2 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -2px; margin-left: -2px; }
+.row-2 > *[class^="col-"] { padding-left: 2px; padding-right: 2px; }
+.row-3 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -3px; margin-left: -3px; }
+.row-3 > *[class^="col-"] { padding-left: 3px; padding-right: 3px; }
+.row-4 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -4px; margin-left: -4px; }
+.row-4 > *[class^="col-"] { padding-left: 4px; padding-right: 4px; }
+.row-5 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -5px; margin-left: -5px; }
+.row-5 > *[class^="col-"] { padding-left: 5px; padding-right: 5px; }
+.row-6 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -6px; margin-left: -6px; }
+.row-6 > *[class^="col-"] { padding-left: 6px; padding-right: 6px; }
+.row-7 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -7px; margin-left: -7px; }
+.row-7 > *[class^="col-"] { padding-left: 7px; padding-right: 7px; }
+.row-8 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -8px; margin-left: -8px; }
+.row-8 > *[class^="col-"] { padding-left: 8px; padding-right: 8px; }
+.row-9 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -6px; margin-left: -6px; }
+.row-9 > *[class^="col-"] { padding-left: 9px; padding-right: 9px; }
+.row-10 { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -10px; margin-left: -10px; }
+.row-10 > *[class^="col-"] { padding-left: 10px; padding-right: 10px; }
+/* } END :: Bootstrap grid row style */
+/* BIGIN :: Button or link style { */
 .pg_page, .pg_end, .pg_start {
 	color: #fff;
 	background-color: rgba(236,177,195,1);
+	height: 40px;
+	line-height: 40px;
+	min-width: 40px;
 }
+.pg_current {
+	height: 40px;
+	line-height: 40px;
+	min-width: 40px;
+}
+.pg_page:hover {
+	color: #fff;
+	background-color: #4c4f6f;
+}
+.pg_start, 
+.pg_prev, 
+.pg_next, 
+.pg_end {
+	text-indent: 0;
+	background-image: none;
+}
+
 .pg_page, .pg_current {
 	border: 0;
 }
@@ -134,12 +72,40 @@ body {
 a {
 	color: #666;
 }
-/* END :: Common */
-/* BIGIN :: Content right side */
+/* } END :: Button or link style */
+/********** END :: Common **********/
+/********** BIGIN :: Main content **********/
+#bo_gall.blog .gall_box {
+	margin: 0 0 10px 0;
+}
+#bo_gall.blog .gall_img {
+	padding: 15px;
+}
+#bo_gall.blog #gall_ul {
+	margin: 0;
+}
+#bo_gall.blog .gall_row .col-gn-0, 
+#bo_gall.blog .gall_row .col-gn-1, 
+#bo_gall.blog .gall_row .col-gn-2, 
+#bo_gall.blog .gall_row .col-gn-3, 
+#bo_gall.blog .gall_row .col-gn-4, 
+#bo_gall.blog .gall_row .col-gn-5, 
+#bo_gall.blog .gall_row .col-gn-6, 
+#bo_gall.blog .gall_row .col-gn-7, 
+#bo_gall.blog .gall_row .col-gn-8, 
+#bo_gall.blog .gall_row .col-gn-9, 
+#bo_gall.blog .gall_row .col-gn-10 {
+	padding-left: 0;
+	padding-right: 0;
+	float: none;
+}
+/********** END :: Main content **********/
+/********** BIGIN :: Content right side **********/
 .ol {
 	margin: 0;
 }
 #visit {
 	margin: 40px 0 20px;
 }
-/* END :: Content right side */
+/********** END :: Content right side **********/
+
