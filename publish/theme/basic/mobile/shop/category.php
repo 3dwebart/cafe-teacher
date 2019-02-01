@@ -5,11 +5,11 @@ function get_mshop_category($ca_id, $len)
 {
     global $g5;
 
-    $sql = " select ca_id, ca_name from {$g5['g5_shop_category_table']}
-                where ca_use = '1' ";
+    $sql = " SELECT ca_id, ca_name FROM {$g5['g5_shop_category_table']}
+                WHERE ca_use = '1' ";
     if($ca_id)
-        $sql .= " and ca_id like '$ca_id%' ";
-    $sql .= " and length(ca_id) = '$len' order by ca_order, ca_id ";
+        $sql .= " AND ca_id like '$ca_id%' ";
+    $sql .= " AND length(ca_id) = '$len' ORDER BY ca_order, ca_id ";
 
     return $sql;
 }
@@ -165,7 +165,7 @@ $(function (){
         var $this = $(this);
         $sub_ul = $(this).closest("li").children("ul.sub_cate");
 
-        if($sub_ul.size() > 0) {
+        if($sub_ul.length > 0) {
             var txt = $this.text();
 
             if($sub_ul.is(":visible")) {

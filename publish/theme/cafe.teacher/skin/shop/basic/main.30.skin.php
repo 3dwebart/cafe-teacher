@@ -124,7 +124,7 @@ if($i == 1) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\
             var $smt_a = $smt.find("a");
             var width = $smt.eq(0).width();
             var height = 0;
-            var count = $smt.size();
+            var count = $smt.length;
             var c_idx = smt_o_idx = 0;
             var fx = null;
             var el_id = this[0].id;
@@ -247,7 +247,7 @@ $(function() {
 
     // 애니메이션 stop
     $("#btn_smt_<?php echo $this->type; ?> button.sctrl_stop").on("click", function() {
-        if($(this).parent().siblings().find(".sctrl_on").size() > 0) {
+        if($(this).parent().siblings().find(".sctrl_on").length > 0) {
             $(this).parent().siblings().find("span").removeClass("sctrl_on").html("");
             $(this).children().addClass("sctrl_on").html("<b class=\"sound_only\">선택됨</b>");
             var id = $(this).closest(".sctrl").attr("id").replace("btn_", "");

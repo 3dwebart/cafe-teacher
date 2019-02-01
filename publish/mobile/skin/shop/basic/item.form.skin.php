@@ -480,7 +480,7 @@ $(function(){
     var time = 500;
     var idx = idx2 = 0;
     var slide_width = $("#sit_pvi_slide").width();
-    var slide_count = $("#sit_pvi_slide li").size();
+    var slide_count = $("#sit_pvi_slide li").length;
     $("#sit_pvi_slide li:first").css("display", "block");
     if(slide_count > 1)
         $(".sit_pvi_btn").css("display", "inline");
@@ -569,7 +569,7 @@ function fsubmit_check(f)
         return false;
     }
 
-    if($(".sit_opt_list").size() < 1) {
+    if($(".sit_opt_list").length < 1) {
         alert("상품의 선택옵션을 선택해 주십시오.");
         return false;
     }
@@ -641,7 +641,7 @@ function fitem_submit(f)
         return false;
     }
 
-    if($(".sit_opt_list").size() < 1) {
+    if($(".sit_opt_list").length < 1) {
         alert("상품의 선택옵션을 선택해 주십시오.");
         return false;
     }

@@ -184,12 +184,12 @@ function book_submit(){
                 var $check_msg = $("#hp_check_el");
 
                 if( !list_text ){ // 중복 휴대폰 번호가 없다면 submit
-                    if($check_msg.size()> 0)
+                    if($check_msg.length> 0)
                         $check_msg.remove();
 
                     is_submit = true;
                 } else {
-                    if($check_msg.size() < 1)
+                    if($check_msg.length < 1)
                         $("input#bk_hp").after("<div id=\"hp_check_el\"><h3>이 번호를 쓰는 회원 정보</h3><ul></ul></div>");
 
                     $("#hp_check_el").find("ul").html( list_text );

@@ -1079,8 +1079,8 @@ function form_submit(f)
     <?php if($od['od_settle_case'] == '신용카드' || $od['od_settle_case'] == 'KAKAOPAY' || $od['od_settle_case'] == '간편결제' || ($od['od_pg'] == 'inicis' && is_inicis_order_pay($od['od_settle_case']) )) { ?>
     if(status == "취소" || status == "반품" || status == "품절") {
         var $ct_chk = $("input[name^=ct_chk]");
-        var chk_cnt = $ct_chk.size();
-        var chked_cnt = $ct_chk.filter(":checked").size();
+        var chk_cnt = $ct_chk.length;
+        var chked_cnt = $ct_chk.filter(":checked").length;
         <?php if($od['od_pg'] == 'KAKAOPAY') { ?>
         var cancel_pg = "카카오페이";
         <?php } else { ?>

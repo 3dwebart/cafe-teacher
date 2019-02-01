@@ -392,7 +392,7 @@ $(function() {
         }
 
         var cont = "<li>"+$li.html().replace("add_item", "del_item").replace("추가", "삭제")+"</li>";
-        var count = $("#reg_item_list li").size();
+        var count = $("#reg_item_list li").length;
 
         if(count > 0) {
             $("#reg_item_list li:last").after(cont);
@@ -409,7 +409,7 @@ $(function() {
 
         $(this).closest("li").remove();
 
-        var count = $("#reg_item_list li").size();
+        var count = $("#reg_item_list li").length;
         if(count < 1)
             $("#reg_item_list").html("<p>등록된 상품이 없습니다.</p>");
     });

@@ -516,7 +516,7 @@ $(function(){
         var $this = $(this);
         var od_id = $this.text().replace(/[^0-9]/g, "");
 
-        if($this.next("#orderitemlist").size())
+        if($this.next("#orderitemlist").length)
             return false;
 
         $("#orderitemlist").remove();

@@ -174,10 +174,10 @@ function add_menu_list(name, link, code)
     else
         $menu_last = $menulist.find("tr.menu_list:last");
 
-	if($menu_last.size() > 0) {
+	if($menu_last.length > 0) {
         $menu_last.after(list);
     } else {
-        if($menulist.find("#empty_menu_list").size() > 0)
+        if($menulist.find("#empty_menu_list").length > 0)
             $menulist.find("#empty_menu_list").remove();
 
         $menulist.find("table tbody").append(list);

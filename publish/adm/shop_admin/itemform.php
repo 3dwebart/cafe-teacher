@@ -815,7 +815,7 @@ $(function(){
                     // 선택삭제
                     $(document).on("click", "#sel_option_delete", function() {
                         var $el = $("input[name='opt_chk[]']:checked");
-                        if($el.size() < 1) {
+                        if($el.length < 1) {
                             alert("삭제하려는 옵션을 하나 이상 선택해 주십시오.");
                             return false;
                         }
@@ -825,7 +825,7 @@ $(function(){
 
                     // 일괄적용
                     $(document).on("click", "#opt_value_apply", function() {
-                        if($(".opt_com_chk:checked").size() < 1) {
+                        if($(".opt_com_chk:checked").length < 1) {
                             alert("일괄 수정할 항목을 하나이상 체크해 주십시오.");
                             return false;
                         }
@@ -837,7 +837,7 @@ $(function(){
                         var $el = $("input[name='opt_chk[]']:checked");
 
                         // 체크된 옵션이 있으면 체크된 것만 적용
-                        if($el.size() > 0) {
+                        if($el.length > 0) {
                             var $tr;
                             $el.each(function() {
                                 $tr = $(this).closest("tr");
@@ -1021,7 +1021,7 @@ $(function(){
                     // 선택삭제
                     $(document).on("click", "#sel_supply_delete", function() {
                         var $el = $("input[name='spl_chk[]']:checked");
-                        if($el.size() < 1) {
+                        if($el.length < 1) {
                             alert("삭제하려는 옵션을 하나 이상 선택해 주십시오.");
                             return false;
                         }
@@ -1031,7 +1031,7 @@ $(function(){
 
                     // 일괄적용
                     $(document).on("click", "#spl_value_apply", function() {
-                        if($(".spl_com_chk:checked").size() < 1) {
+                        if($(".spl_com_chk:checked").length < 1) {
                             alert("일괄 수정할 항목을 하나이상 체크해 주십시오.");
                             return false;
                         }
@@ -1043,7 +1043,7 @@ $(function(){
                         var $el = $("input[name='spl_chk[]']:checked");
 
                         // 체크된 옵션이 있으면 체크된 것만 적용
-                        if($el.size() > 0) {
+                        if($el.length > 0) {
                             var $tr;
                             $el.each(function() {
                                 $tr = $(this).closest("tr");
@@ -1381,7 +1381,7 @@ $(function(){
                     }
 
                     var cont = "<li>"+$li.html().replace("add_item", "del_item").replace("추가", "삭제")+"</li>";
-                    var count = $("#reg_relation li").size();
+                    var count = $("#reg_relation li").length;
 
                     if(count > 0) {
                         $("#reg_relation li:last").after(cont);
@@ -1398,7 +1398,7 @@ $(function(){
 
                     $(this).closest("li").remove();
 
-                    var count = $("#reg_relation li").size();
+                    var count = $("#reg_relation li").length;
                     if(count < 1)
                         $("#reg_relation").html("<p>선택된 상품이 없습니다.</p>");
                 });
@@ -1500,7 +1500,7 @@ $(function(){
                     }
 
                     var cont = "<li>"+$li.html().replace("add_event", "del_event").replace("추가", "삭제")+"</li>";
-                    var count = $("#reg_event_list li").size();
+                    var count = $("#reg_event_list li").length;
 
                     if(count > 0) {
                         $("#reg_event_list li:last").after(cont);
@@ -1515,7 +1515,7 @@ $(function(){
 
                     $(this).closest("li").remove();
 
-                    var count = $("#reg_event_list li").size();
+                    var count = $("#reg_event_list li").length;
                     if(count < 1)
                         $("#reg_event_list").html("<p>선택된 이벤트가 없습니다.</p>");
                 });
