@@ -1,3 +1,26 @@
+DROP TABLE IF EXISTS `g5_language`;
+CREATE TABLE IF NOT EXISTS `g5_language` (
+  `name` VARCHAR(20) NOT NULL COMMENT '언어종류',
+  PRIMARY KEY (`name`)
+) ENGINE = InnoDB DEFAULT CHARSET `UTF8` COMMENT='언어종류';
+
+DROP TABLE IF EXISTS `g5_language_label`;
+CREATE TABLE IF NOT EXISTS `g5_language_label` (
+  `name` VARCHAR(20) NOT NULL COMMENT '언어종류',
+  `label` VARCHAR(255) NOT NULL COMMENT '배열라벨',
+  PRIMARY KEY(`name`),
+  FOREIGN KEY (`name`) REFERENCES `g5_language` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET `UTF8`;
+
+DROP TABLE IF EXISTS `g5_language_pack`;
+CREATE TABLE IF NOT EXISTS `g5_language_pack` (
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '일련변호',
+  `name` VARCHAR(20) NOT NULL COMMENT '언어종류',
+  `label` VARCHAR(255) NOT NULL COMMENT '배열라벨',
+  `content` VARCHAR(255) NOT NULL COMMENT '각 언어별 내용',
+  PRIMARY KEY(`id`),
+  FOREIGN KEY (`label`) REFERENCES `g5_language_label` (`label`)
+) ENGINE=InnoDB DEFAULT CHARSET `UTF8`;
 -- --------------------------------------------------------
 
 --

@@ -1,5 +1,90 @@
 @charset "utf-8";
 /********** BIGIN :: Common **********/
+/* BIGIN :: Top bar { */
+.top-bar-wrap { background-color: rgba(255,255,255,1); }
+.top-bar { display: flex; justify-content: space-between; }
+/* } END :: Top bar */
+/* BIGIN :: Logo & Search { */
+.logo-search { background-color: rgba(255,255,255,1); padding: 50px 0; }
+#frmsearch1 input, #frmsearch1 button { border-radius: 0; }
+#frmsearch1 input { border: 0; border-bottom: 2px solid #333; }
+.logo-search a.cart { font-size: 1.25rem; }
+.logo-search a.cart .small { font-size: .75rem; }
+/* } END :: Logo & Search */
+
+/* BIGIN :: Dropdown menu { */
+.dropdown-menu {
+    top: calc(100% - 2px);
+}
+.dropdown:hover > .dropdown-menu {
+	display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+	/* Without this, clicking will make it sticky */
+	pointer-events: none;
+}
+.btn-cafemart {
+	color: #333;
+	background-color: #fff;
+	border-color: #fff;
+	padding: 0rem .75rem .375rem .75rem;
+	transition: all .5s ease;
+}
+.btn-cafemart.active, .btn-cafemart:hover {
+	color: #fff;
+	background-color: rgba(236,177,195,1);
+	border-color: rgba(236,177,195,1);
+	transition: all .5s ease;
+}
+
+.btn-cafemart-dark {
+	color: #fff;
+	background-color: #333;
+	border-color: #333;
+	padding: 0rem .75rem .375rem .75rem;
+	transition: all .5s ease;
+}
+.btn-cafemart-dark.active, .btn-cafemart-dark:hover {
+	color: #fff;
+	background-color: rgba(236,177,195,1);
+	border-color: rgba(236,177,195,1);
+	transition: all .5s ease;
+}
+.dropdown-item:focus, .dropdown-item:hover { color: rgba(236,177,195,1); }
+/* } END :: Dropdown menu */
+/* BIGIN :: Language pack { */
+.language .current-lang, .language .dropdown-menu a {
+	padding-left: 50px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+.language .kor {
+	background-image: url('../img/flag/kor.png');
+}
+.language .eng {
+	background-image: url('../img/flag/eng.png');
+}
+.language .fra {
+	background-image: url('../img/flag/fra.png');
+}
+.language .chi-zh {
+	background-image: url('../img/flag/chi-zh.png');
+}
+/* } END :: Language pack */
+/* BIGIN :: Font style { */
+/*
+	전체 환경 글꼴 - 본고딕(noto sans)
+	고딕 사용 가능 종류 - 
+		고딕체 : 본고딕(Noto Sans KR), 
+				나눔 바른 고딕(Nanum Barun Gothic)
+		명조체 : Noto Serif KR
+*/
+* { font-family: 'Noto Sans KR', sans-serif; }
+.noto-sans { font-family: 'Noto Sans KR', sans-serif; }
+.noto-serif { font-family: 'Noto Serif KR', serif; }
+.nanum-barun-ghothic { font-family: 'Nanum Barun Gothic'; }
+/* } END :: Font style */
 /* BIGIN :: All commen style { */
 body {
 	background-color: #efefef;
@@ -8,6 +93,9 @@ body {
 	.container {
 		max-width: 1200px;
 	}
+}
+legend {
+	display: none;
 }
 .bg-w {
 	background-color: #fff;
@@ -74,6 +162,51 @@ a {
 }
 /* } END :: Button or link style */
 /********** END :: Common **********/
+/********** BIGIN :: Component **********/
+.component-box { display: flex; flex-wrap: wrap; }
+/* BIGIN :: radio or checkbox align */
+/*
+	Not add class : checkbox or eadio buttons group align left
+	Add class center : checkbox or eadio buttons group align center
+	Ass class right : checkbox or eadio buttons group align right
+*/
+.component-box.center { justify-content: center; }
+.component-box.right { justify-content: flex-end; }
+/* END :: radio or checkbox align */
+/* BIGIN :: radio or checkbox 공통 */
+.radio-box, .check-box { display: flex; flex-wrap: wrap; flex: 0 0 auto; padding: 10px 10px; max-width: 100%; }
+.radio-box input[type="radio"], .check-box input[type="checkbox"] { display: none; }
+.radio-box span, .check-box span { display: flex; flex-wrap: nowrap; flex: 0 0 auto; max-width: 100%; }
+.radio-box span.box, .check-box span.box { width: 20px; height: 20px; border: 1px solid #dedede; margin-right: 15px; position: relative; transition: ease all 1s; }
+.radio-box.re span.box, .check-box.re span.box { margin-left: 15px; }
+.radio-box span.text, .check-box span.text { line-height: 20px; }
+/* END :: radio or checkbox 공통 */
+/* BIGIN :: only radio */
+.radio-box span.box { border-radius: 50%; }
+.radio-box span.box:after { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%);background-color: transparent; }
+.radio-box input:checked + span.box { border: 1px solid #333; transition: ease all 1s; }
+.radio-box input:checked + span.box:after { background-color: #333; transition: ease all 1s; }
+/* END :: only radio */
+/* BIGIN :: only checkbox */
+.check-box span.box { font-family: 'Nanum Barun Gothic'; font-size: 0.01rem; }
+.check-box span.box:after { content: "\2713"; position: absolute; color: transparent; top: 50%; left: 50%; transform: translate(-35%,-50%); transition: ease all 1s; }
+.check-box input:checked + span.box { border: 1px solid #333; transition: ease all 1s; }
+.check-box input:checked + span.box:after { transition: ease all 1s; font-size: 2.5rem; color: #333; }
+/* END :: only checkbox */
+/********** END :: Component **********/
+/********** BIGIN :: Community side nav **********/
+.community-side-nav {}
+.community-side-nav li {}
+.community-side-nav li .title, .community-side-nav li a {padding: 10px 15px;}
+.community-side-nav li .title { background-color: rgba(236,177,195,1); color: #fff; font-size: 1.25rem; }
+/********** END :: Community side nav **********/
+/********** BIGIN :: Community side search **********/
+.community-side-search #hd_sch { border: 1px solid rgba(236,177,195,1); }
+.community-side-search .hd_sch_wr { position: static; margin: 0; width: auto; padding: 0 10px; }
+.community-side-search #hd_sch #sch_stx { width: calc(100% - 50px); height: 35px; font-size: 0.7rem; }
+.community-side-search #hd_sch #sch_submit { height: 33px; color: rgba(236,177,195,1); text-align: right; padding-right: 10px;
+}}
+/********** END :: Community side search **********/
 /********** BIGIN :: Main content **********/
 #bo_gall.blog .gall_box {
 	margin: 0 0 10px 0;
@@ -108,4 +241,7 @@ a {
 	margin: 40px 0 20px;
 }
 /********** END :: Content right side **********/
-
+/********** END :: Board list **********/
+#fboardlist { position: relative; }
+#fboardlist #gall_allchk { position: absolute; display: inline-block; right: 10px; top: 0; z-index: 10; }
+/********** END :: Board list **********/

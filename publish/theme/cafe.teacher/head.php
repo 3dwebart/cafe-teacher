@@ -33,7 +33,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 	<div id="tnb">
 		<ul>
 			<?php if ($is_member) {  ?>
-
 			<li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-cog" aria-hidden="true"></i> 정보수정</a></li>
 			<li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> 로그아웃</a></li>
 			<?php if ($is_admin) {  ?>
@@ -43,7 +42,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 			<li><a href="<?php echo G5_BBS_URL ?>/register.php"><i class="fa fa-user-plus" aria-hidden="true"></i> 회원가입</a></li>
 			<li><a href="<?php echo G5_BBS_URL ?>/login.php"><b><i class="fa fa-sign-in" aria-hidden="true"></i> 로그인</b></a></li>
 			<?php }  ?>
-
 			<?php if(G5_COMMUNITY_USE) { ?>
 			<li class="tnb_left tnb_shop"><a href="<?php echo G5_SHOP_URL; ?>/"><i class="fa fa-shopping-bag" aria-hidden="true"></i> 쇼핑몰</a></li>
 			<li class="tnb_left tnb_community"><a href="<?php echo G5_URL; ?>/"><i class="fa fa-home" aria-hidden="true"></i> 커뮤니티</a></li>
@@ -52,55 +50,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 		</ul>
   
 	</div>
+	<!--
 	<div id="hd_wrapper">
-
-		<div id="logo">
-			<a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
-		</div>
-	
-		<div class="hd_sch_wr">
-			<fieldset id="hd_sch" >
-				<legend>사이트 내 전체검색</legend>
-				<form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">
-				<input type="hidden" name="sfl" value="wr_subject||wr_content">
-				<input type="hidden" name="sop" value="and">
-				<label for="sch_stx" class="sound_only">검색어 필수</label>
-				<input type="text" name="stx" id="sch_stx" maxlength="20" placeholder="검색어를 입력해주세요">
-				<button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
-				</form>
-
-				<script>
-				function fsearchbox_submit(f)
-				{
-					if (f.stx.value.length < 2) {
-						alert("검색어는 두글자 이상 입력하십시오.");
-						f.stx.select();
-						f.stx.focus();
-						return false;
-					}
-
-					// 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
-					var cnt = 0;
-					for (var i=0; i<f.stx.value.length; i++) {
-						if (f.stx.value.charAt(i) == ' ')
-							cnt++;
-					}
-
-					if (cnt > 1) {
-						alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
-						f.stx.select();
-						f.stx.focus();
-						return false;
-					}
-
-					return true;
-				}
-				</script>
-
-			</fieldset>
-				
-			<?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
-		</div>
 		<ul id="hd_qnb">
 			<li><a href="<?php echo G5_BBS_URL ?>/faq.php"><i class="fa fa-question" aria-hidden="true"></i><span>FAQ</span></a></li>
 			<li><a href="<?php echo G5_BBS_URL ?>/qalist.php"><i class="fa fa-comments" aria-hidden="true"></i><span>1:1문의</span></a></li>
@@ -108,6 +59,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 			<li><a href="<?php echo G5_BBS_URL ?>/new.php"><i class="fa fa-history" aria-hidden="true"></i><span>새글</span></a></li>
 		</ul>
 	</div>
+	-->
 	<!--
 	<nav id="gnb">
 		<h2>메인메뉴</h2>
@@ -229,24 +181,75 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <!-- 콘텐츠 시작 { -->
+<?php
+	$bo_table = $_GET['bo_table'];
+	$bo_info_sql = "SELECT bo_subject FROM g5_board WHERE bo_table = '$bo_table'";
+	$bo_info_row = sql_fetch($bo_info_sql);
+	$title = $bo_info_row['bo_subject'];
+?>
 <div id="wrapper">
 	<div id="container_wr" class="container p-0">
 		<div class="row-5">
 			<div class="col-2">
 				<div class="bg-w">
-					<ul>
+					<ul class="community-side-nav pt-3">
 						<li>
 							<a href="<?php echo G5_URL; ?>" class="d-block text-center">
 								<img src="<?php echo G5_IMG_URL.'/logo/cafe-teacher-logo.png'; ?>" alt="">
 							</a>
 						</li>
+						<?php if(!empty($title)) { ?>
 						<li>
-							<?php echo $bo_subject; ?>
+							<h2 class="title"><?php echo $title; ?></h2>
 						</li>
+						<?php } ?>
 						<li>
 							Menus
 						</li>
 					</ul>
+					<div class="community-side-search pb-3">
+						<div class="hd_sch_wr">
+							<fieldset id="hd_sch" >
+								<legend>사이트 내 전체검색</legend>
+								<form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">
+								<input type="hidden" name="sfl" value="wr_subject||wr_content">
+								<input type="hidden" name="sop" value="and">
+								<label for="sch_stx" class="sound_only">검색어 필수</label>
+								<input type="text" name="stx" id="sch_stx" maxlength="20" placeholder="검색어를 입력해주세요">
+								<button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+								</form>
+
+								<script>
+								function fsearchbox_submit(f)
+								{
+									if (f.stx.value.length < 2) {
+										alert("검색어는 두글자 이상 입력하십시오.");
+										f.stx.select();
+										f.stx.focus();
+										return false;
+									}
+
+									// 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
+									var cnt = 0;
+									for (var i=0; i<f.stx.value.length; i++) {
+										if (f.stx.value.charAt(i) == ' ')
+											cnt++;
+									}
+
+									if (cnt > 1) {
+										alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
+										f.stx.select();
+										f.stx.focus();
+										return false;
+									}
+
+									return true;
+								}
+								</script>
+							</fieldset>
+						<?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-7">
